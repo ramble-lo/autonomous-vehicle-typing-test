@@ -74,8 +74,6 @@ body {
   display: flex;
   align-items: center;
   margin: 0 auto;
-  height: 20vh;
-  /* max-width: 1020px; */
   width: 100%;
   background-color: #fff;
   box-sizing: border-box;
