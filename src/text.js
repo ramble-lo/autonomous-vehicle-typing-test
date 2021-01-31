@@ -13,7 +13,7 @@
 // const text02 = "the round pegs in2"
 const videoUrls = {
     noFrontScreen : 'https://youtu.be/WDYdgMARFfA',
-    haveFrontScreen : 'https://youtu.be/4qfAAI8M73A'
+    haveFrontScreen : 'https://youtu.be/vzuTiNVtras'
 }
 
 const textDBNoFrontScreen = [
