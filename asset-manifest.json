@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/autonomous-vehicle-typing-test/static/css/main.53e7499e.chunk.css",
-    "main.js": "/autonomous-vehicle-typing-test/static/js/main.2c58631f.chunk.js",
-    "main.js.map": "/autonomous-vehicle-typing-test/static/js/main.2c58631f.chunk.js.map",
+    "main.js": "/autonomous-vehicle-typing-test/static/js/main.b2db7469.chunk.js",
+    "main.js.map": "/autonomous-vehicle-typing-test/static/js/main.b2db7469.chunk.js.map",
     "runtime-main.js": "/autonomous-vehicle-typing-test/static/js/runtime-main.12acd56c.js",
     "runtime-main.js.map": "/autonomous-vehicle-typing-test/static/js/runtime-main.12acd56c.js.map",
     "static/js/2.891dc5e3.chunk.js": "/autonomous-vehicle-typing-test/static/js/2.891dc5e3.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.12acd56c.js",
     "static/js/2.891dc5e3.chunk.js",
     "static/css/main.53e7499e.chunk.css",
-    "static/js/main.2c58631f.chunk.js"
+    "static/js/main.b2db7469.chunk.js"
   ]
 }
