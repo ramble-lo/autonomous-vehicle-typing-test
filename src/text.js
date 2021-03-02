@@ -12,8 +12,8 @@
 //     // + " enough to think they can change the world, are the ones who do."
 // const text02 = "the round pegs in2"
 const videoUrls = {
-    noFrontScreen : 'https://youtu.be/WDYdgMARFfA',
-    haveFrontScreen : 'https://youtu.be/b9VqeixefkY'
+    noFrontScreen : 'https://youtu.be/jc-7jVEvF0U',
+    haveFrontScreen : 'https://youtu.be/4C7-7XTDE54'
 }
 
 const textDBNoFrontScreen = [
