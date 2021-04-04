@@ -1,5 +1,5 @@
 import './App.css';
-import {textDBNoFrontScreen, textDBHaveFrontScreen, videoUrls} from './text'
+import {textDBNoFrontScreen, textDBHaveFrontScreen, videoUrls, typingSpeedArticle} from './text'
 import React,{useState,useEffect} from 'react';
 import ReactPlayer from "react-player";
 
@@ -10,6 +10,7 @@ const App = () => {
   const [editWord, setEditWord] = useState('');
 
   const [flag, setFlag] = useState(0);
+  const [typingSpeedflag, setTypingSpeedFlag] = useState(false);
   const [oldTimeStamp, setOldTimeStamp] = useState(0);//時間戳記
   const [wrong, setWrong] = useState(0);//錯誤數
   const [errorRate, setErrorRate] = useState(0);//錯誤率
@@ -62,6 +63,7 @@ const App = () => {
     if(flag === 0){
       timestamp = Math.floor(new Date() / 1000);
       setArticleNum((setArticleNum) => setArticleNum + 1);
+      if(typingSpeedflag){setTimeout(()=>{alert(`STOP`)},60000)}
     }
 
 
@@ -93,25 +95,40 @@ const App = () => {
 
   /*結果顯示*/
   const resultClick = () => {
+    console.log('resultClick');
     setFinalWord(resultWord)
     setFinalWrong(wrong)
     setErrorRate(wrong / resultWord )
   }
 
   /*模式轉換*/
-  const modeCliclk = () => {
-    let v,f,t
-     if(mode.modeFlag === 1){
-       v = "video";
-       f = 0;
-       t =  textDBHaveFrontScreen;
-     }else{
-       v = "video none";
-       f = 1 ;
-       t = textDBNoFrontScreen;
-     }
-    setMode({open : v,modeFlag : f, modeArticle: t});
-    setText(t[articleNum]);
+  // const modeCliclk = () => {
+  //   let v,f,t
+  //    if(mode.modeFlag === 1){
+  //      v = "video";
+  //      f = 0;
+  //      t =  textDBHaveFrontScreen;
+  //    }else{
+  //      v = "video none";
+  //      f = 1 ;
+  //      t = textDBNoFrontScreen;
+  //    }
+  //   setMode({open : v,modeFlag : f, modeArticle: t});
+  //   setText(t[articleNum]);
+  // }
+  const haveFrontScreenModeClick = () => {
+    setMode({open : "video",modeFlag : 0, modeArticle: textDBHaveFrontScreen});
+    setText(textDBHaveFrontScreen[articleNum]);
+  }
+  const haveNoFrontScreenModeClick = () => {
+    setMode({open : "video none",modeFlag : 1, modeArticle: textDBNoFrontScreen});
+    setText(textDBNoFrontScreen[articleNum]);
+  }
+  const typingSpeedClick = () => {
+    console.log('typing');
+    setMode({open : 'video none',modeFlag : 1, modeArticle: typingSpeedArticle});
+    setText(typingSpeedArticle[articleNum]);
+    setTypingSpeedFlag(true)
   }
 
 
@@ -161,8 +178,10 @@ const App = () => {
     </div>
     <div className="footer">
       <div onClick={resultClick} className="result-button">結果</div>
-      <div onClick={modeCliclk} className="result-button">切換模式</div>
-      <div onClick={videoClick} className="result-button">切換影片</div>
+      {/* <div onClick={modeCliclk} className="result-button">切換模式</div> */}
+      <div onClick={haveNoFrontScreenModeClick} className="result-button">無車前模式</div>
+      <div onClick={haveFrontScreenModeClick} className="result-button">有車前模式</div>
+      <div onClick={typingSpeedClick} className="result-button">打字速度測試</div>
       <div  className="result">正確率：{1 - errorRate.toFixed(3)}_</div>
       <div  className="result">錯誤率：{errorRate.toFixed(3)}_</div>
       <div  className="result">輸入字數：{finalWord}_</div>

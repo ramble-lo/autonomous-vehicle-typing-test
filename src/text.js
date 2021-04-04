@@ -141,6 +141,17 @@ const textDBHaveFrontScreen = [
     "After all his father was a Baggins. A decent respectable hobbit was Mr. Drogo Baggins; there was never much to tell of him, till he was drownded.",
 ]
 
+const typingSpeedArticle = [
+"The next day more carts rolled up the Hill, and still more carts. There might have been some grumbling about dealing locally, but that very week orders began to pour out of Bag End for every kind of provision, commodity, or luxury that could be obtained in Hobbiton or Bywater or anywhere in the neighbourhood.", 
 
-export  {videoUrls, textDBNoFrontScreen, textDBHaveFrontScreen}
+"People became enthusiastic; and they began to tick off the days on the calendar; and they watched eagerly for the postman, hoping for invitations. Before long the invitations began pouring out, and the Hobbiton post-office was blocked, and the Bywater post-office was snowed under, and voluntary assistant postmen were called for.",
+
+"There was a constant stream of them going up the Hill, carrying hundreds of polite variations on Thank you, I shall certainly come . A notice appeared on the gate at Bag End: NO ADMITTANCE EXCEPT ON PARTY BUSINESS. Even those who had, or pretended to have Party Business were seldom allowed inside.", 
+
+"Bilbo was busy: writing invitations, ticking off answers, packing up presents, and making some private preparations of his own. From the time of Gandalfs arrival he remained hidden from view. One morning the hobbits woke to find the large field, south of Bilbos front door, covered with ropes and poles for tents and pavilions.",
+
+"A special entrance was cut into the bank leading to the road, and wide steps and a large white gate were built there. The three hobbit-families of Bagshot Row, adjoining the field, were intensely interested and generally envied. Old Gaffer Gamgee stopped even pretending to work in his garden."
+]
+
+export  {videoUrls, textDBNoFrontScreen, textDBHaveFrontScreen,typingSpeedArticle}
 
