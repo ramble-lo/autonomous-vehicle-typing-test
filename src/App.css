@@ -56,11 +56,11 @@ body {
   width: 28px;
   text-align: center;
   font-size: 2rem;
-  line-height: 4rem;
+  line-height: 3rem;
   color: #888888;
   border-bottom: 1px solid rgba(136, 136, 136, 9);
   box-sizing: border-box;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .correct {
