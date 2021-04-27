@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/autonomous-vehicle-typing-test/static/css/main.53e7499e.chunk.css",
+    "main.css": "/autonomous-vehicle-typing-test/static/css/main.f443d65a.chunk.css",
     "main.js": "/autonomous-vehicle-typing-test/static/js/main.0bbfb378.chunk.js",
     "main.js.map": "/autonomous-vehicle-typing-test/static/js/main.0bbfb378.chunk.js.map",
     "runtime-main.js": "/autonomous-vehicle-typing-test/static/js/runtime-main.12acd56c.js",
@@ -10,13 +10,13 @@
     "static/js/3.c3a3d1ef.chunk.js": "/autonomous-vehicle-typing-test/static/js/3.c3a3d1ef.chunk.js",
     "static/js/3.c3a3d1ef.chunk.js.map": "/autonomous-vehicle-typing-test/static/js/3.c3a3d1ef.chunk.js.map",
     "index.html": "/autonomous-vehicle-typing-test/index.html",
-    "static/css/main.53e7499e.chunk.css.map": "/autonomous-vehicle-typing-test/static/css/main.53e7499e.chunk.css.map",
+    "static/css/main.f443d65a.chunk.css.map": "/autonomous-vehicle-typing-test/static/css/main.f443d65a.chunk.css.map",
     "static/js/2.0c262e15.chunk.js.LICENSE.txt": "/autonomous-vehicle-typing-test/static/js/2.0c262e15.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.12acd56c.js",
     "static/js/2.0c262e15.chunk.js",
-    "static/css/main.53e7499e.chunk.css",
+    "static/css/main.f443d65a.chunk.css",
     "static/js/main.0bbfb378.chunk.js"
   ]
 }
