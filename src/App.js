@@ -18,6 +18,12 @@ const App = () => {
   const [finalWrong, setFinalWrong] = useState(0);//最後結果錯誤數
   const [articleNum, setArticleNum] = useState(0);//文章編號
 
+  const [time, setTime] = useState({ms:0, s:0, m:0});//碼表
+  const [interv, setInterv] = useState();
+  let updatedMs = time.ms
+  let updatedS = time.s
+  let updatedM = time.m
+
 
   //模式轉換******************
   const [mode, setMode] = useState({
@@ -49,8 +55,26 @@ const App = () => {
         }else{
           return <div key={current} className="normal" >{value}</div>
         }
-      })
+  })
   
+  const run = () => {
+    if(updatedM === 6){
+      updatedM = 0;
+      clearInterval(interv)
+      return alert('Stop')
+    }
+    if(updatedS === 60){
+      updatedM++;
+      updatedS = 0;
+    }
+    if(updatedMs === 99){
+      updatedS++;
+      updatedMs = 0;
+    }
+
+    updatedMs++;
+    return setTime({ms:updatedMs, s:updatedS, m:updatedM});
+  }
   /*輸入觸發*/
   const handleKeyIn = (e) => {
     let add = 0;
@@ -58,13 +82,21 @@ const App = () => {
     let timestamp
     let arrayLength = 0
     let articleNumCount = 0
+    console.log('handleKeyIn');
 
     //第一次輸入
+    console.log('flag:',flag);
     if(flag === 0){
       timestamp = Math.floor(new Date() / 1000);
       setArticleNum((setArticleNum) => setArticleNum + 1);
+      console.log('first time');
       //打字測驗時間
-      if(typingSpeedflag){setTimeout(()=>{alert(`STOP`)},360000)}
+      // if(typingSpeedflag){setTimeout(()=>{alert(`STOP`)},360000)}
+      // if(typingSpeedflag){
+      //   // run();
+      //   console.log('setInterval');
+      //   setInterv(setInterval(run, 10));
+      // }
     }
 
 
@@ -78,6 +110,10 @@ const App = () => {
 
     //計算輸入正確與錯誤
     if(text.charAt(currentWord)===e.key){
+      //打字速度碼表判斷
+      if(flag === 0 && typingSpeedflag){
+        setInterv(setInterval(run, 10));
+      }
       add = 1;
     }else if('Shift' === e.key || 'CapsLock' === e.key){
 
@@ -85,15 +121,14 @@ const App = () => {
     else{
       add = 1;
       error = 1;
-
     }
-
+  console.log('flag上');
     setFlag(flag === 0 ? 1 : 1) 
+    console.log('flag下');
     setResultWord((resultWord)=> resultWord + add);//最終輸入的字數
     setCurrentWord((currentWord)=> currentWord + add - error - arrayLength);//目前輸入的字數與重置
     setWrong((wrong)=> wrong+error);//錯誤數+1
   }
-
   /*結果顯示*/
   const resultClick = () => {
     console.log('resultClick');
@@ -101,22 +136,6 @@ const App = () => {
     setFinalWrong(wrong)
     setErrorRate(wrong / resultWord )
   }
-
-  /*模式轉換*/
-  // const modeCliclk = () => {
-  //   let v,f,t
-  //    if(mode.modeFlag === 1){
-  //      v = "video";
-  //      f = 0;
-  //      t =  textDBHaveFrontScreen;
-  //    }else{
-  //      v = "video none";
-  //      f = 1 ;
-  //      t = textDBNoFrontScreen;
-  //    }
-  //   setMode({open : v,modeFlag : f, modeArticle: t});
-  //   setText(t[articleNum]);
-  // }
   const haveFrontScreenModeClick = () => {
     setMode({open : "video",modeFlag : 0, modeArticle: textDBHaveFrontScreen});
     setText(textDBHaveFrontScreen[articleNum]);
@@ -183,10 +202,11 @@ const App = () => {
       <div onClick={haveNoFrontScreenModeClick} className="result-button">無車前模式</div>
       <div onClick={haveFrontScreenModeClick} className="result-button">有車前模式</div>
       <div onClick={typingSpeedClick} className="result-button">打字速度測試</div>
-      <div  className="result">正確率：{1 - errorRate.toFixed(3)}_</div>
-      <div  className="result">錯誤率：{errorRate.toFixed(3)}_</div>
-      <div  className="result">輸入字數：{finalWord}_</div>
-      <div  className="result">錯誤數：{finalWrong}</div>
+      <div  className="result">正確率：{1 - errorRate.toFixed(3)}</div>
+      <div  className="result">_錯誤率：{errorRate.toFixed(3)}</div>
+      <div  className="result">_輸入字數：{finalWord}</div>
+      <div  className="result">_錯誤數：{finalWrong}</div>
+      <div  className="result">_時間計時：{time.m}:{time.s}:{time.ms}</div>
     </div>
     </>
   );
