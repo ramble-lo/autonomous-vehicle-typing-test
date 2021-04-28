@@ -63,7 +63,8 @@ const App = () => {
     if(flag === 0){
       timestamp = Math.floor(new Date() / 1000);
       setArticleNum((setArticleNum) => setArticleNum + 1);
-      if(typingSpeedflag){setTimeout(()=>{alert(`STOP`)},60000)}
+      //打字測驗時間
+      if(typingSpeedflag){setTimeout(()=>{alert(`STOP`)},360000)}
     }
 
 
